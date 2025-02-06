@@ -4,8 +4,8 @@ const entryDropdown = document.getElementById('entry-dropdown');
 const addEntryButton = document.getElementById('add-entry');
 const clearButton = document.getElementById('clear');
 const output = document.getElementById('output');
-
 let isError = false;
+
 function cleanInputString(str) {
     const regex = /[+-\s]/g;
     return str.replace(regex, "");
@@ -21,5 +21,6 @@ return str.match(regex);
       <input type="text" id="${entryDropdown.value}-${entryNumber}-name" placeholder="Name" />
       <label for="${entryDropdown.value}-${entryNumber}-calories">Entry ${entryNumber} Calories</label>
   <input type="number" min="0" placeholder="Calories" id= "${entryDropdown.value}-${entryNumber}-calories"/>`;
+  targetInputContainer.insertAdjacentHTML("beforeend", HTMLString);
   addEntryButton.addEventListener('click', addEntry);
     }
