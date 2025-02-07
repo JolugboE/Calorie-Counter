@@ -22,6 +22,13 @@ return str.match(regex);
       <label for="${entryDropdown.value}-${entryNumber}-calories">Entry ${entryNumber} Calories</label>
   <input type="number" min="0" placeholder="Calories" id= "${entryDropdown.value}-${entryNumber}-calories"/>`;
   targetInputContainer.insertAdjacentHTML("beforeend", HTMLString);
+
+  function calculateCalories(e){
+    e.preventDefault();
+    isError = false;
+    
+  }
+
   function getCaloriesFromInputs(list) {
     let calories = 0;
     for (const item of list) {
@@ -32,7 +39,9 @@ return str.match(regex);
         isError = true;
         return null;
           }
+          calories += Number('currVal');
         }
+        return calories;
       }
   addEntryButton.addEventListener('click', addEntry);
     }
