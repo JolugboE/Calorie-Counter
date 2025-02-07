@@ -25,7 +25,10 @@ return str.match(regex);
   function getCaloriesFromInputs(list) {
     let calories = 0;
     for (const item of list) {
-      const currVal = item.value;
+      const currVal = cleanInputString(item.value);
+      const invalidInputMatch = isInvalidInput(currVal);
+      if (invalidInputMatch) {
+          }
         }
       }
   addEntryButton.addEventListener('click', addEntry);
