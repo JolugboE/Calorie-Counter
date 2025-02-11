@@ -90,9 +90,14 @@ function clearForm() {
   for (const container of inputContainers){
     container.innerHTML = "";
   }
+
   budgetNumberInput.value = '';
+
   output.innerText = '';
+
+  output.classList.add('hide');
   }
 
 addEntryButton.addEventListener("click", addEntry);
 calorieCounter.addEventListener("submit", calculateCalories);
+clearButton.addEventListener("click", clearForm);
